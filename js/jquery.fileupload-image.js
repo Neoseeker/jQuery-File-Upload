@@ -239,7 +239,7 @@
                 var that = this,
                     file = data.files[data.index],
                     dfd = $.Deferred();
-                if (data.canvas.toBlob) {
+                if (data.canvas.toBlob && file.type !== 'image/gif') {
                     data.canvas.toBlob(
                         function (blob) {
                             if (!blob.name) {
