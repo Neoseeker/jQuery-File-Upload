@@ -247,7 +247,7 @@
           file = data.files[data.index],
           // eslint-disable-next-line new-cap
           dfd = $.Deferred();
-        if (data.canvas.toBlob) {
+        if (data.canvas.toBlob && file.type !== 'image/gif') {
           data.canvas.toBlob(
             function (blob) {
               if (!blob.name) {
